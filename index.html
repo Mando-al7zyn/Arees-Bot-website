@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="mainHtml">
+<html lang="ar" id="mainHtml" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +8,15 @@
     
     <style>
         :root {
-            /* وضع ليلي دائم */
-            --bg: #2c2f33;
-            --card: #23272a;
+            --bg: #0f1216;
+            --card: rgba(35, 39, 42, 0.85);
             --text: #dcddde;
-            --title: #7289da;
+            --title: #5865f2; /* لون ديسكورد الرسمي */
             --sub: #99aab5;
             --accent: #5865f2;
             --success: #3ba55c;
-            --transition: all 0.3s ease;
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * { box-sizing: border-box; }
@@ -24,10 +24,10 @@
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--bg);
+            background: radial-gradient(circle at top right, #1e2124, #0f1216);
             color: var(--text);
             line-height: 1.6;
-            transition: var(--transition);
+            min-height: 100vh;
         }
 
         /* Navbar */
@@ -35,88 +35,140 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 5%;
-            background: var(--card);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            padding: 12px 8%;
+            background: rgba(15, 18, 22, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid var(--glass-border);
         }
 
-        .navbar h1 {
-            margin: 0;
-            font-size: 1.4rem;
-            color: var(--title);
+        .navbar-brand {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            color: white;
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-decoration: none;
         }
 
-        /* زر تغيير اللغة */
+        .nav-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--title);
+        }
+
         .lang-btn {
-            background: transparent;
-            border: 1px solid var(--title);
-            color: var(--title);
+            background: var(--title);
+            border: none;
+            color: white;
             padding: 8px 16px;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
             transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
         .lang-btn:hover {
-            background: var(--title);
-            color: white;
+            filter: brightness(1.2);
+            transform: translateY(-1px);
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1100px;
             margin: 40px auto;
             padding: 0 20px;
         }
 
-        .header-info { text-align: center; margin-bottom: 40px; }
+        .header-info { text-align: center; margin-bottom: 50px; }
+
+        .hero-logo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 4px solid var(--glass-border);
+            transition: var(--transition);
+            object-fit: cover;
+        }
+        
+        .hero-logo:hover {
+            transform: scale(1.05);
+            border-color: var(--title);
+        }
+
+        .header-info h1 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+            color: #fff;
+        }
+
+        /* Grid Layout */
+        .legal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
 
         .card {
             background: var(--card);
-            padding: 30px;
-            border-radius: 16px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-            border: 1px solid rgba(255,255,255,0.05);
+            padding: 35px;
+            border-radius: 24px;
+            border: 1px solid var(--glass-border);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--title);
+            background: rgba(44, 47, 51, 0.95);
         }
 
         .card h2 {
             color: var(--title);
             margin-top: 0;
-            border-bottom: 1px solid rgba(153, 170, 181, 0.2);
-            padding-bottom: 10px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
+            font-size: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 15px;
         }
 
-        .card ul { padding: 0; list-style: none; }
+        .card ul { padding: 0; list-style: none; margin-top: 20px; }
+        
         .card li {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             display: flex;
             align-items: flex-start;
             gap: 12px;
+            font-size: 1.05rem;
         }
-        .card li::before {
-            content: "\f058";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
+
+        .card li i {
             color: var(--success);
             margin-top: 5px;
+            font-size: 1.2rem;
+        }
+
+        .links-card {
+            grid-column: 1 / -1;
+            text-align: center;
+            background: linear-gradient(145deg, rgba(88, 101, 242, 0.1), var(--card));
         }
 
         .action-buttons {
             display: flex;
             gap: 15px;
+            justify-content: center;
             flex-wrap: wrap;
             margin-top: 20px;
         }
@@ -125,8 +177,8 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 12px 24px;
-            border-radius: 8px;
+            padding: 14px 28px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: bold;
             color: white;
@@ -135,105 +187,112 @@
 
         .btn-invite { background: var(--success); }
         .btn-support { background: var(--accent); }
-        .btn:hover { filter: brightness(1.1); transform: scale(1.02); }
+        .btn:hover { 
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
 
         footer {
             text-align: center;
-            padding: 50px;
+            padding: 60px 20px;
             color: var(--sub);
-            font-size: 0.9rem;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 50px;
         }
 
-        /* إخفاء المحتوى بناءً على اللغة */
         [lang="ar"] .en-content, [lang="en"] .ar-content { display: none; }
+
+        @media (max-width: 600px) {
+            .header-info h1 { font-size: 1.8rem; }
+            .hero-logo { width: 100px; height: 100px; }
+        }
     </style>
 </head>
 
-<body class="dark-mode">
+<body>
 
-<div class="navbar">
-    <h1><i class="fas fa-robot"></i> Arab BOT</h1>
+<nav class="navbar">
+    <div class="navbar-brand">
+        <img src="https://i.ibb.co/wZ6hvfG0/image.jpg" alt="Arab BOT" class="nav-logo">
+        <span>Arab BOT</span>
+    </div>
     <button class="lang-btn" onclick="toggleLanguage()">
-        <i class="fas fa-globe"></i>
         <span id="langText">English</span>
     </button>
-</div>
+</nav>
 
 <div class="container">
-    
     <div class="header-info">
+        <img src="https://i.ibb.co/wZ6hvfG0/image.jpg" alt="Logo" class="hero-logo">
         <div class="ar-content">
             <h1>الأوراق القانونية</h1>
-            <p>آخر تحديث: 23 ديسمبر 2025</p>
+            <p>خصوصيتك وأمان سيرفرك هي أولويتنا القصوى</p>
         </div>
         <div class="en-content">
             <h1>Legal Documents</h1>
-            <p>Last Updated: December 23, 2025</p>
+            <p>Your privacy and server security are our top priority</p>
         </div>
     </div>
 
-    <div class="card">
-        <h2 class="ar-content"><i class="fas fa-user-shield"></i> سياسة الخصوصية</h2>
-        <h2 class="en-content"><i class="fas fa-user-shield"></i> Privacy Policy</h2>
-        
-        <ul class="ar-content">
-            <li><strong>جمع البيانات:</strong> نقوم بتخزين معرفات المستخدمين والسيرفرات فقط لتشغيل الأوامر.</li>
-            <li><strong>الرسائل:</strong> لا نقوم بتخزين أو أرشفة أي محتوى نصي لرسائلك.</li>
-            <li><strong>مشاركة البيانات:</strong> لا يتم بيع أو مشاركة البيانات مع أي جهات خارجية.</li>
-        </ul>
+    <div class="legal-grid">
+        <div class="card">
+            <h2 class="ar-content"><i class="fas fa-shield-halved"></i> سياسة الخصوصية</h2>
+            <h2 class="en-content"><i class="fas fa-shield-halved"></i> Privacy Policy</h2>
+            <ul class="ar-content">
+                <li><i class="fas fa-check-circle"></i> تخزين معرفات الديسكورد فقط لضمان عمل الخدمات.</li>
+                <li><i class="fas fa-check-circle"></i> لا نطلع على محتوى الشات أو الصور داخل سيرفرك.</li>
+                <li><i class="fas fa-check-circle"></i> بياناتك مشفرة ولا تُباع لأي جهة خارجية أبداً.</li>
+            </ul>
+            <ul class="en-content">
+                <li><i class="fas fa-check-circle"></i> Only Discord IDs are stored for functionality.</li>
+                <li><i class="fas fa-check-circle"></i> We never access your chat content or images.</li>
+                <li><i class="fas fa-check-circle"></i> Your data is encrypted and never sold.</li>
+            </ul>
+        </div>
 
-        <ul class="en-content">
-            <li><strong>Data Collection:</strong> We only store User and Guild IDs to ensure bot functionality.</li>
-            <li><strong>Messages:</strong> We do not log, store, or archive your text message content.</li>
-            <li><strong>Data Sharing:</strong> No data is sold or shared with any third-party entities.</li>
-        </ul>
-    </div>
+        <div class="card">
+            <h2 class="ar-content"><i class="fas fa-file-signature"></i> شروط الخدمة</h2>
+            <h2 class="en-content"><i class="fas fa-file-signature"></i> Terms of Service</h2>
+            <ul class="ar-content">
+                <li><i class="fas fa-check-circle"></i> يمنع استخدام البوت في أي أعمال تخريبية أو مخالفة.</li>
+                <li><i class="fas fa-check-circle"></i> سوء استخدام الأوامر قد يعرضك للحظر من خدماتنا.</li>
+                <li><i class="fas fa-check-circle"></i> استخدام البوت يعني موافقتك على شروط ديسكورد الرسمية.</li>
+            </ul>
+            <ul class="en-content">
+                <li><i class="fas fa-check-circle"></i> Prohibited from using the bot for raiding or abuse.</li>
+                <li><i class="fas fa-check-circle"></i> Misuse of commands leads to a permanent ban.</li>
+                <li><i class="fas fa-check-circle"></i> Use implies compliance with Discord's TOS.</li>
+            </ul>
+        </div>
 
-    <div class="card">
-        <h2 class="ar-content"><i class="fas fa-file-contract"></i> شروط الخدمة</h2>
-        <h2 class="en-content"><i class="fas fa-file-contract"></i> Terms of Service</h2>
-
-        <ul class="ar-content">
-            <li><strong>الالتزام:</strong> يجب الالتزام بقوانين Discord الرسمية عند استخدام البوت.</li>
-            <li><strong>المسؤولية:</strong> المطور غير مسؤول عن سوء استخدام الأوامر الإدارية.</li>
-            <li><strong>الحظر:</strong> سيتم حظر أي سيرفر يستخدم البوت في التخريب أو "السبام".</li>
-        </ul>
-
-        <ul class="en-content">
-            <li><strong>Compliance:</strong> Usage must comply with Discord's official Terms of Service.</li>
-            <li><strong>Responsibility:</strong> Developers are not liable for misuse of admin commands.</li>
-            <li><strong>Bans:</strong> Malicious use (spam/raiding) will result in a permanent ban.</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h2 class="ar-content"><i class="fas fa-external-link-alt"></i> روابط هامة</h2>
-        <h2 class="en-content"><i class="fas fa-external-link-alt"></i> Quick Links</h2>
-        
-        <div class="action-buttons">
-            <a href="https://discord.com/oauth2/authorize?client_id=1423325443393589290&permissions=8&integration_type=0&scope=bot" class="btn btn-invite" target="_blank">
-                <span class="ar-content">إضافة البوت</span>
-                <span class="en-content">Add to Discord</span>
-            </a>
-            <a href="https://discord.gg/YOUR_INVITE_CODE" class="btn btn-support" target="_blank">
-                <span class="ar-content">سيرفر الدعم</span>
-                <span class="en-content">Support Server</span>
-            </a>
+        <div class="card links-card">
+            <h2 class="ar-content" style="justify-content: center;"><i class="fas fa-link"></i> ابدأ الآن</h2>
+            <h2 class="en-content" style="justify-content: center;"><i class="fas fa-link"></i> Get Started</h2>
+            <div class="action-buttons">
+                <a href="https://discord.com/oauth2/authorize?client_id=1423325443393589290&permissions=8&integration_type=0&scope=bot" class="btn btn-invite" target="_blank">
+                    <i class="fab fa-discord"></i>
+                    <span class="ar-content">إضافة البوت</span>
+                    <span class="en-content">Invite Bot</span>
+                </a>
+                <a href="#" class="btn btn-support">
+                    <i class="fas fa-headset"></i>
+                    <span class="ar-content">سيرفر الدعم</span>
+                    <span class="en-content">Support</span>
+                </a>
+            </div>
         </div>
     </div>
-
 </div>
 
 <footer>
-    <span class="ar-content">© 2025 فريق Arab BOT — جميع الحقوق محفوظة</span>
-    <span class="en-content">© 2025 Arab BOT Team — All Rights Reserved</span>
+    <p class="ar-content">© 2025 فريق Arab BOT — جميع الحقوق محفوظة</p>
+    <p class="en-content">© 2025 Arab BOT Team — All Rights Reserved</p>
 </footer>
 
 <script>
     function toggleLanguage() {
         const html = document.getElementById('mainHtml');
         const langText = document.getElementById('langText');
-        
         if (html.getAttribute('lang') === 'ar') {
             html.setAttribute('lang', 'en');
             html.setAttribute('dir', 'ltr');
@@ -244,8 +303,6 @@
             langText.innerText = 'English';
         }
     }
-
-    // تعيين العربية كافتراضية عند أول تحميل
     window.onload = () => {
         const html = document.getElementById('mainHtml');
         html.setAttribute('lang', 'ar');
