@@ -4,20 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vantex • الأوراق القانونية والخصوصية</title>
-  
+ 
   <meta name="description" content="سياسة الخصوصية وشروط الخدمة لبوت Vantex – حماية بياناتك وسيرفرك أولويتنا الأولى."/>
   <meta name="theme-color" content="#5865f2"/>
   <meta property="og:title" content="Vantex Bot - Legal & Privacy"/>
   <meta property="og:description" content="شفافية كاملة • خصوصية مضمونة • أمان سيرفرك"/>
   <meta property="og:image" content="https://i.ibb.co/wZ6hvfG0/image.jpg"/>
-  
+ 
   <link rel="icon" type="image/png" href="https://i.ibb.co/wZ6hvfG0/image.jpg"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
+ 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
-
   <style>
     :root {
       --bg: #0d0e12;
@@ -31,7 +30,6 @@
       --border: rgba(88,101,242,0.18);
       --glow: 0 0 24px rgba(88,101,242,0.28);
     }
-
     [data-theme="light"] {
       --bg: #f8f9ff;
       --surface: #ffffff;
@@ -41,7 +39,6 @@
       --border: rgba(88,101,242,0.12);
       --glow: 0 0 20px rgba(88,101,242,0.18);
     }
-
     * { margin:0; padding:0; box-sizing:border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -51,7 +48,6 @@
       min-height: 100dvh;
       transition: background 0.4s, color 0.4s;
     }
-
     body::before {
       content: "";
       position: fixed;
@@ -61,7 +57,6 @@
       z-index: -2;
       pointer-events: none;
     }
-
     .navbar {
       position: sticky;
       top: 0;
@@ -75,9 +70,7 @@
       align-items: center;
       transition: all 0.3s;
     }
-
     [data-theme="light"] .navbar { background: rgba(255,255,255,0.92); }
-
     .logo-container {
       display: flex;
       align-items: center;
@@ -87,7 +80,6 @@
       color: var(--primary);
       text-decoration: none;
     }
-
     .logo-img {
       width: 48px;
       height: 48px;
@@ -96,10 +88,8 @@
       box-shadow: var(--glow);
       transition: transform 0.4s;
     }
-
     .logo-img:hover { transform: rotate(15deg) scale(1.1); }
-
-    .theme-toggle, .lang-toggle {
+    .theme-toggle, .lang-toggle, .dashboard-toggle {
       background: var(--surface2);
       color: var(--text);
       border: 1px solid var(--border);
@@ -109,22 +99,18 @@
       transition: all 0.25s;
       margin-left: 0.8rem;
     }
-
-    .theme-toggle:hover, .lang-toggle:hover {
+    .theme-toggle:hover, .lang-toggle:hover, .dashboard-toggle:hover {
       background: var(--primary);
       color: white;
       box-shadow: var(--glow);
       transform: translateY(-2px);
     }
-
     main { max-width: 1200px; margin: 5rem auto 6rem; padding: 0 5vw; }
-
     .hero {
       text-align: center;
       margin-bottom: 6rem;
       position: relative;
     }
-
     #particles-js {
       position: absolute;
       width: 100%;
@@ -133,7 +119,6 @@
       z-index: -1;
       opacity: 0.4;
     }
-
     .hero-logo {
       width: 180px;
       height: 180px;
@@ -143,9 +128,7 @@
       margin-bottom: 2rem;
       animation: float 8s ease-in-out infinite;
     }
-
     @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-18px); } }
-
     h1 {
       font-size: clamp(2.5rem, 7vw, 4.5rem);
       font-weight: 900;
@@ -154,7 +137,6 @@
       background-clip: text;
       color: transparent;
     }
-
     .subtitle {
       color: var(--text2);
       font-size: 1.25rem;
@@ -165,17 +147,14 @@
       border-right: 3px solid var(--accent);
       animation: typing 4s steps(40, end) forwards, blink 0.8s step-end infinite;
     }
-
     @keyframes typing { from { width: 0 } to { width: 100% } }
-    @keyframes blink  { 50% { border-color: transparent } }
-
+    @keyframes blink { 50% { border-color: transparent } }
     .stats {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
       gap: 1.5rem;
       margin: 5rem 0;
     }
-
     .stat-item {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -185,22 +164,18 @@
       transition: all 0.35s;
       backdrop-filter: blur(10px);
     }
-
     .stat-item:hover {
       transform: translateY(-10px);
       border-color: var(--primary);
       box-shadow: var(--glow);
     }
-
     .stat-value { font-size: 3rem; font-weight: 900; color: var(--accent); }
-
-    .cards-grid, .faq-grid {
+    .cards-grid, .faq-grid, .dashboard-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
       gap: 2rem;
       margin: 4rem 0;
     }
-
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -210,13 +185,11 @@
       position: relative;
       overflow: hidden;
     }
-
     .card:hover {
       transform: translateY(-12px);
       border-color: var(--primary);
       box-shadow: var(--glow);
     }
-
     .card h2 {
       color: var(--primary);
       font-size: 1.7rem;
@@ -225,39 +198,32 @@
       align-items: center;
       gap: 14px;
     }
-
     .card ul { list-style: none; display: grid; gap: 1.2rem; }
-
     .card li {
       display: flex;
       align-items: flex-start;
       gap: 14px;
       font-size: 1.1rem;
     }
-
     .card li i { color: #3ba55c; font-size: 1.5rem; margin-top: 4px; }
-
-    .copy-btn {
+    .copy-btn, .action-btn {
       background: var(--surface2);
       border: none;
       color: var(--text2);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
+      padding: 0.6rem 1.2rem;
+      border-radius: 10px;
       cursor: pointer;
-      font-size: 0.9rem;
+      font-size: 1rem;
       margin-top: 1rem;
       transition: all 0.2s;
     }
-
-    .copy-btn:hover { background: var(--primary); color: white; }
-
+    .action-btn:hover { background: var(--primary); color: white; }
     .faq-item {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 12px;
       overflow: hidden;
     }
-
     .faq-question {
       width: 100%;
       padding: 1.2rem 1.8rem;
@@ -271,7 +237,6 @@
       justify-content: space-between;
       align-items: center;
     }
-
     .faq-answer {
       max-height: 0;
       overflow: hidden;
@@ -279,11 +244,8 @@
       transition: all 0.35s ease;
       color: var(--text2);
     }
-
     .faq-item.active .faq-answer { max-height: 500px; padding: 1.5rem 1.8rem; }
-
     .cta-section { text-align: center; margin: 8rem 0 5rem; }
-
     .btn {
       display: inline-flex;
       align-items: center;
@@ -296,15 +258,13 @@
       transition: all 0.3s;
       margin: 0.8rem;
     }
-
-    .btn-primary  { background: var(--primary); color: white; box-shadow: var(--glow); }
-    .btn-success  { background: #3ba55c; color: white; }
-
+    .btn-primary { background: var(--primary); color: white; box-shadow: var(--glow); }
+    .btn-success { background: #3ba55c; color: white; }
+    .btn-danger { background: #ed4245; color: white; }
     .btn:hover {
       transform: translateY(-4px);
       box-shadow: 0 14px 36px rgba(0,0,0,0.35);
     }
-
     #back-to-top {
       position: fixed;
       bottom: 30px;
@@ -324,28 +284,62 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       z-index: 999;
     }
-
     #back-to-top.show { opacity: 1; visibility: visible; }
-
     footer {
       text-align: center;
       padding: 5rem 1rem 3rem;
       color: var(--text2);
       border-top: 1px solid var(--border);
     }
-
     @media (max-width: 640px) {
       .hero-logo { width: 130px; height: 130px; }
       h1 { font-size: 2.8rem; }
       .stats { gap: 1.2rem; }
     }
+    .hidden { display: none !important; }
+    .user-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid var(--primary);
+      box-shadow: var(--glow);
+      margin: 1rem auto;
+      display: block;
+    }
+    .login-btn {
+      background: #5865f2;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: var(--glow);
+      transition: all 0.3s;
+    }
+    .login-btn:hover {
+      transform: translateY(-4px);
+      background: #4752c4;
+    }
+    #guilds-list li {
+      padding: 0.8rem 0;
+      transition: all 0.2s;
+    }
+    #guilds-list li:not(.disabled):hover {
+      background: rgba(88,101,242,0.1);
+      border-radius: 8px;
+      padding-left: 1rem;
+    }
+    #guilds-list li.disabled {
+      cursor: not-allowed;
+      color: var(--text2);
+    }
   </style>
 </head>
 <body data-theme="dark">
-
-<!-- Particles background -->
 <div id="particles-js"></div>
-
 <nav class="navbar">
   <a href="#" class="logo-container">
     <img src="https://i.ibb.co/wZ6hvfG0/image.jpg" alt="Vantex Logo" class="logo-img">
@@ -354,127 +348,171 @@
   <div>
     <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع">☀️</button>
     <button class="lang-toggle" id="langBtn">English</button>
+    <button class="dashboard-toggle" id="dashboardToggle">داشبورد</button>
   </div>
 </nav>
-
 <main>
-  <section class="hero">
-    <img src="https://i.ibb.co/wZ6hvfG0/image.jpg" alt="Vantex Logo" class="hero-logo">
-    <h1 data-ar>الأوراق القانونية – Vantex</h1>
-    <h1 data-en style="display:none">Vantex • Legal & Privacy</h1>
-    
-    <p class="subtitle" data-ar>حماية • خصوصية • شفافية كاملة</p>
-    <p class="subtitle" data-en style="display:none">Protection • Privacy • Full Transparency</p>
-  </section>
-
-  <section class="stats">
-    <div class="stat-item">
-      <div class="stat-value">+32</div>
-      <div class="stat-label" data-ar>أمر برمجي</div>
-      <div class="stat-label" data-en style="display:none">Commands</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-value">+2,400+</div>
-      <div class="stat-label" data-ar>سيرفر نشط</div>
-      <div class="stat-label" data-en style="display:none">Active Servers</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-value">Dara3</div>
-      <div class="stat-label" data-ar>الفريق</div>
-      <div class="stat-label" data-en style="display:none">Team</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-value"><i class="fa-solid fa-circle fa-beat" style="color:#3ba55c"></i></div>
-      <div class="stat-label" data-ar>نشط 24/7</div>
-      <div class="stat-label" data-en style="display:none">Online 24/7</div>
-    </div>
-  </section>
-
-  <section class="cards-grid">
-    <!-- الإدارة والتطوير -->
-    <div class="card">
-      <h2><i class="fa-solid fa-users-gear"></i> <span data-ar>الإدارة والتطوير</span><span data-en style="display:none">Team & Development</span></h2>
-      <ul>
-        <li><i class="fa-solid fa-crown"></i> <strong data-ar>المطور:</strong> Embaby (1gZ)</li>
-        <li><i class="fa-solid fa-people-group"></i> <strong data-ar>الفريق:</strong> Dara3</li>
-        <li><i class="fa-solid fa-shield-check"></i> <strong data-ar>الحالة:</strong> مشروع رسمي معتمد</li>
-      </ul>
-      <button class="copy-btn" onclick="copySection(this)">نسخ القسم</button>
-    </div>
-
-    <!-- سياسة الخصوصية -->
-    <div class="card">
-      <h2><i class="fa-solid fa-shield-halved"></i> <span data-ar>سياسة الخصوصية</span><span data-en style="display:none">Privacy Policy</span></h2>
-      <ul>
-        <li><i class="fa-solid fa-check-circle"></i> <span data-ar>نخزن فقط المعرفات اللازمة لتشغيل الميزات</span><span data-en>Only essential IDs are stored</span></li>
-        <li><i class="fa-solid fa-check-circle"></i> <span data-ar>لا نقرأ المحادثات أو نرى الملفات</span><span data-en>No access to messages or files</span></li>
-        <li><i class="fa-solid fa-check-circle"></i> <span data-ar>البيانات مشفرة ولا تُباع أبدًا</span><span data-en>Data encrypted • Never sold</span></li>
-      </ul>
-      <button class="copy-btn" onclick="copySection(this)">نسخ القسم</button>
-    </div>
-
-    <!-- شروط الخدمة -->
-    <div class="card">
-      <h2><i class="fa-solid fa-file-signature"></i> <span data-ar>شروط الخدمة</span><span data-en style="display:none">Terms of Service</span></h2>
-      <ul>
-        <li><i class="fa-solid fa-check-circle"></i> <span data-ar>ممنوع الرايد أو السبام أو التخريب</span><span data-en>No raiding, spam or abuse</span></li>
-        <li><i class="fa-solid fa-check-circle"></i> <span data-ar>سوء الاستخدام = حظر دائم</span><span data-en>Misuse = permanent ban</span></li>
-        <li><i class="fa-solid fa-check-circle"></i> <span data-ar>استخدامك = موافقتك على شروط ديسكورد</span><span data-en>Use = agreement to Discord ToS</span></li>
-      </ul>
-      <button class="copy-btn" onclick="copySection(this)">نسخ القسم</button>
-    </div>
-  </section>
-
-  <!-- FAQ Accordion -->
-  <section class="faq-grid">
-    <h2 style="grid-column: 1 / -1; text-align:center; margin-bottom:2rem; color:var(--primary);">
-      <i class="fa-solid fa-circle-question"></i> <span data-ar>أسئلة شائعة</span><span data-en style="display:none">Frequently Asked Questions</span>
-    </h2>
-
-    <div class="faq-item">
-      <button class="faq-question" data-ar>هل يقرأ البوت رسائلي؟<span>▼</span></button>
-      <div class="faq-answer" data-ar>
-        لا، البوت لا يقرأ محتوى الرسائل أو يخزنها. يتعامل فقط مع الأوامر المباشرة والمعرفات اللازمة.
+  <div id="legal-content">
+    <section class="hero">
+      <img src="https://i.ibb.co/wZ6hvfG0/image.jpg" alt="Vantex Logo" class="hero-logo">
+      <h1 data-ar>الأوراق القانونية – Vantex</h1>
+      <h1 data-en style="display:none">Vantex • Legal & Privacy</h1>
+     
+      <p class="subtitle" data-ar>حماية • خصوصية • شفافية كاملة</p>
+      <p class="subtitle" data-en style="display:none">Protection • Privacy • Full Transparency</p>
+    </section>
+    <section class="stats">
+      <div class="stat-item">
+        <div class="stat-value">+32</div>
+        <div class="stat-label" data-ar>أمر برمجي</div>
+        <div class="stat-label" data-en style="display:none">Commands</div>
       </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" data-ar>كيف أحصل على النسخة البريميوم؟<span>▼</span></button>
-      <div class="faq-answer" data-ar>
-        تواصل مع المطور في سيرفر الدعم. البريميوم يفتح ميزات مثل Anti-Spam المتقدم و Say Embed و Blacklist.
+      <div class="stat-item">
+        <div class="stat-value">+2,400+</div>
+        <div class="stat-label" data-ar>سيرفر نشط</div>
+        <div class="stat-label" data-en style="display:none">Active Servers</div>
       </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" data-ar>ماذا يحدث إذا انتهى الاشتراك البريميوم؟<span>▼</span></button>
-      <div class="faq-answer" data-ar>
-        تعود الميزات البريميوم للوضع المغلق تلقائيًا، لكن البوت يظل يعمل بالميزات المجانية.
+      <div class="stat-item">
+        <div class="stat-value">Dara3</div>
+        <div class="stat-label" data-ar>الفريق</div>
+        <div class="stat-label" data-en style="display:none">Team</div>
       </div>
-    </div>
-  </section>
-
-  <section class="cta-section">
-    <h2 data-ar>جاهز لتجربة Vantex؟</h2>
-    <h2 data-en style="display:none">Ready to experience Vantex?</h2>
-    <div>
-      <a href="https://discord.com/oauth2/authorize?client_id=1423325443393589290&permissions=8&integration_type=0&scope=bot" class="btn btn-success" target="_blank">
-        <i class="fa-brands fa-discord"></i> <span data-ar>أضف البوت الآن</span><span data-en>Add Bot Now</span>
+      <div class="stat-item">
+        <div class="stat-value"><i class="fa-solid fa-circle fa-beat" style="color:#3ba55c"></i></div>
+        <div class="stat-label" data-ar>نشط 24/7</div>
+        <div class="stat-label" data-en style="display:none">Online 24/7</div>
+      </div>
+    </section>
+    <section class="cards-grid">
+      <div class="card">
+        <h2><i class="fa-solid fa-users-gear"></i> <span data-ar>الإدارة والتطوير</span><span data-en style="display:none">Team & Development</span></h2>
+        <ul>
+          <li><i class="fa-solid fa-crown"></i> <strong data-ar>المطور:</strong> Embaby (1gZ)</li>
+          <li><i class="fa-solid fa-people-group"></i> <strong data-ar>الفريق:</strong> Dara3</li>
+          <li><i class="fa-solid fa-shield-check"></i> <strong data-ar>الحالة:</strong> مشروع رسمي معتمد</li>
+        </ul>
+        <button class="copy-btn" onclick="copySection(this)">نسخ القسم</button>
+      </div>
+      <div class="card">
+        <h2><i class="fa-solid fa-shield-halved"></i> <span data-ar>سياسة الخصوصية</span><span data-en style="display:none">Privacy Policy</span></h2>
+        <ul>
+          <li><i class="fa-solid fa-check-circle"></i> <span data-ar>نخزن فقط المعرفات اللازمة لتشغيل الميزات</span><span data-en>Only essential IDs are stored</span></li>
+          <li><i class="fa-solid fa-check-circle"></i> <span data-ar>لا نقرأ المحادثات أو نرى الملفات</span><span data-en>No access to messages or files</span></li>
+          <li><i class="fa-solid fa-check-circle"></i> <span data-ar>البيانات مشفرة ولا تُباع أبدًا</span><span data-en>Data encrypted • Never sold</span></li>
+        </ul>
+        <button class="copy-btn" onclick="copySection(this)">نسخ القسم</button>
+      </div>
+      <div class="card">
+        <h2><i class="fa-solid fa-file-signature"></i> <span data-ar>شروط الخدمة</span><span data-en style="display:none">Terms of Service</span></h2>
+        <ul>
+          <li><i class="fa-solid fa-check-circle"></i> <span data-ar>ممنوع الرايد أو السبام أو التخريب</span><span data-en>No raiding, spam or abuse</span></li>
+          <li><i class="fa-solid fa-check-circle"></i> <span data-ar>سوء الاستخدام = حظر دائم</span><span data-en>Misuse = permanent ban</span></li>
+          <li><i class="fa-solid fa-check-circle"></i> <span data-ar>استخدامك = موافقتك على شروط ديسكورد</span><span data-en>Use = agreement to Discord ToS</span></li>
+        </ul>
+        <button class="copy-btn" onclick="copySection(this)">نسخ القسم</button>
+      </div>
+    </section>
+    <section class="faq-grid">
+      <h2 style="grid-column: 1 / -1; text-align:center; margin-bottom:2rem; color:var(--primary);">
+        <i class="fa-solid fa-circle-question"></i> <span data-ar>أسئلة شائعة</span><span data-en style="display:none">Frequently Asked Questions</span>
+      </h2>
+      <div class="faq-item">
+        <button class="faq-question" data-ar>هل يقرأ البوت رسائلي؟<span>▼</span></button>
+        <div class="faq-answer" data-ar>
+          لا، البوت لا يقرأ محتوى الرسائل أو يخزنها. يتعامل فقط مع الأوامر المباشرة والمعرفات اللازمة.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" data-ar>كيف أحصل على النسخة البريميوم؟<span>▼</span></button>
+        <div class="faq-answer" data-ar>
+          تواصل مع المطور في سيرفر الدعم. البريميوم يفتح ميزات مثل Anti-Spam المتقدم و Say Embed و Blacklist.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" data-ar>ماذا يحدث إذا انتهى الاشتراك البريميوم؟<span>▼</span></button>
+        <div class="faq-answer" data-ar>
+          تعود الميزات البريميوم للوضع المغلق تلقائيًا، لكن البوت يظل يعمل بالميزات المجانية.
+        </div>
+      </div>
+    </section>
+    <section class="cta-section">
+      <h2 data-ar>جاهز لتجربة Vantex؟</h2>
+      <h2 data-en style="display:none">Ready to experience Vantex?</h2>
+      <div>
+        <a href="https://discord.com/oauth2/authorize?client_id=1423325443393589290&permissions=8&integration_type=0&scope=bot" class="btn btn-success" target="_blank">
+          <i class="fa-brands fa-discord"></i> <span data-ar>أضف البوت الآن</span><span data-en>Add Bot Now</span>
+        </a>
+        <a href="https://discord.gg/9bGhBVCqCf" class="btn btn-primary" target="_blank">
+          <i class="fa-solid fa-headset"></i> <span data-ar>سيرفر الدعم</span><span data-en>Support Server</span>
+        </a>
+      </div>
+    </section>
+  </div>
+  <div id="dashboard-content" class="hidden">
+    <section class="hero" style="margin-bottom: 4rem;">
+      <h1 style="margin-bottom: 1rem;">لوحة تحكم Vantex</h1>
+      <p class="subtitle" style="animation: none; white-space: normal; border: none;">إدارة سيرفراتك • إعدادات البوت • حالة البريميوم</p>
+    </section>
+    <div id="not-logged-in" style="text-align: center; padding: 6rem 1rem;">
+      <i class="fa-solid fa-lock fa-6x" style="color: var(--accent); margin-bottom: 2rem;"></i>
+      <h2 style="margin-bottom: 1.5rem;">قم بتسجيل الدخول بحساب ديسكورد</h2>
+      <p style="color: var(--text2); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+        للوصول إلى لوحة التحكم، تحتاج تسجيل الدخول باستخدام حساب ديسكورد الخاص بك لتحديد السيرفرات التي تمتلك صلاحيات عليها.
+      </p>
+      <a href="https://discord.com/oauth2/authorize?client_id=1423325443393589290&response_type=token&redirect_uri=https%3A%2F%2F1gz22.github.io%2FVantex-Bot-website%2F&scope=identify+guilds"
+         class="login-btn">
+        <i class="fa-brands fa-discord"></i> تسجيل الدخول بديسكورد
       </a>
-      <a href="https://discord.gg/9bGhBVCqCf" class="btn btn-primary" target="_blank">
-        <i class="fa-solid fa-headset"></i> <span data-ar>سيرفر الدعم</span><span data-en>Support Server</span>
-      </a>
     </div>
-  </section>
+    <div id="logged-in-view" class="hidden">
+      <div style="text-align: center; margin-bottom: 4rem;">
+        <img src="https://i.ibb.co/wZ6hvfG0/image.jpg" alt="User Avatar" class="user-avatar">
+        <h2 id="user-name">تحميل...</h2>
+        <p style="color: var(--text2);" id="user-id">ID: 0000000000000000</p>
+      </div>
+      <section class="dashboard-grid">
+        <div class="card">
+          <h2><i class="fa-solid fa-server"></i> السيرفرات المتاحة</h2>
+          <ul id="guilds-list">
+            <li><i class="fa-solid fa-spinner fa-spin"></i> جاري تحميل السيرفرات...</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2><i class="fa-solid fa-cog"></i> إعدادات عامة</h2>
+          <ul>
+            <li>Prefix الحالي: <strong>!</strong> <button class="action-btn" style="font-size:0.9rem;">تغيير</button></li>
+            <li>قناة الترحيب: <strong>#welcome</strong> <button class="action-btn" style="font-size:0.9rem;">تعديل</button></li>
+            <li>Anti-Spam: <strong>مفعّل</strong> <button class="action-btn" style="font-size:0.9rem;">إعدادات</button></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2><i class="fa-solid fa-crown"></i> حالة البريميوم</h2>
+          <ul>
+            <li>الحالة: <strong style="color:#3ba55c;">غير بريميوم</strong></li>
+            <li>انتهاء الاشتراك: —</li>
+            <li><button class="btn btn-success" style="margin-top:1rem;"><i class="fa-solid fa-gem"></i> اشترك الآن</button></li>
+          </ul>
+        </div>
+      </section>
+      <div style="text-align: center; margin: 4rem 0;">
+        <button id="logout-btn" class="btn btn-danger">
+          <i class="fa-solid fa-right-from-bracket"></i> تسجيل الخروج
+        </button>
+      </div>
+    </div>
+    <div style="text-align: center; margin: 4rem 0;">
+      <button id="back-to-legal-from-dash" class="btn btn-primary">
+        <i class="fa-solid fa-arrow-right-from-bracket fa-flip-horizontal"></i> العودة للصفحة الرئيسية
+      </button>
+    </div>
+  </div>
 </main>
-
 <footer>
-  <p data-ar>© 2025–2026  فريق Dara3  •  بواسطة Embaby (1gZ)</p>
-  <p data-en style="display:none">© 2025–2026  Dara3 Team  •  By Embaby (1gZ)</p>
+  <p data-ar>© 2025–2026 فريق Dara3 • بواسطة Embaby (1gZ)</p>
+  <p data-en style="display:none">© 2025–2026 Dara3 Team • By Embaby (1gZ)</p>
   <p style="margin-top:1rem; font-size:0.9rem;">Last updated: January 18, 2026</p>
 </footer>
-
 <button id="back-to-top" aria-label="العودة للأعلى"><i class="fa-solid fa-arrow-up"></i></button>
-
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
 // Particles
@@ -495,24 +533,20 @@ particlesJS("particles-js", {
   },
   retina_detect: true
 });
-
 // Theme Toggle
 const themeToggle = document.getElementById('themeToggle');
 const currentTheme = localStorage.getItem('theme') || 'dark';
 document.body.setAttribute('data-theme', currentTheme);
 themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
-
 themeToggle.addEventListener('click', () => {
   const newTheme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
   document.body.setAttribute('data-theme', newTheme);
   localStorage.setItem('theme', newTheme);
   themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
 });
-
 // Language Toggle
 const langBtn = document.getElementById('langBtn');
 const html = document.documentElement;
-
 function toggleLang() {
   const isArabic = html.getAttribute('lang') === 'ar';
   if (isArabic) {
@@ -524,15 +558,12 @@ function toggleLang() {
     html.setAttribute('dir', 'rtl');
     langBtn.textContent = 'English';
   }
-
   document.querySelectorAll('[data-ar], [data-en]').forEach(el => {
-    el.style.display = (isArabic && el.hasAttribute('data-en')) || (!isArabic && el.hasAttribute('data-ar')) 
+    el.style.display = (isArabic && el.hasAttribute('data-en')) || (!isArabic && el.hasAttribute('data-ar'))
       ? 'none' : 'block';
   });
 }
-
 langBtn.addEventListener('click', toggleLang);
-
 // FAQ Accordion
 document.querySelectorAll('.faq-question').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -540,27 +571,113 @@ document.querySelectorAll('.faq-question').forEach(btn => {
     item.classList.toggle('active');
   });
 });
-
 // Copy Section
 function copySection(btn) {
   const card = btn.closest('.card');
-  const text = card.querySelector('h2').textContent + '\n' + 
+  const text = card.querySelector('h2').textContent + '\n' +
                Array.from(card.querySelectorAll('li')).map(li => li.textContent).join('\n');
   navigator.clipboard.writeText(text).then(() => {
     btn.textContent = 'تم النسخ!';
     setTimeout(() => btn.textContent = 'نسخ القسم', 2000);
   });
 }
-
 // Back to Top
 const backToTop = document.getElementById('back-to-top');
 window.addEventListener('scroll', () => {
   backToTop.classList.toggle('show', window.scrollY > 400);
 });
-
 backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+// Dashboard Logic
+const dashboardToggle = document.getElementById('dashboardToggle');
+const legalContent = document.getElementById('legal-content');
+const dashboardContent = document.getElementById('dashboard-content');
+const backToLegal = document.getElementById('back-to-legal-from-dash');
+const notLoggedIn = document.getElementById('not-logged-in');
+const loggedInView = document.getElementById('logged-in-view');
+const logoutBtn = document.getElementById('logout-btn');
+dashboardToggle.addEventListener('click', () => {
+  legalContent.classList.add('hidden');
+  dashboardContent.classList.remove('hidden');
+});
+backToLegal.addEventListener('click', () => {
+  dashboardContent.classList.add('hidden');
+  legalContent.classList.remove('hidden');
+});
+logoutBtn.addEventListener('click', () => {
+  localStorage.removeItem('discord_access_token');
+  location.href = 'https://1gz22.github.io/Vantex-Bot-website/';
+});
+// تفعيل تسجيل الدخول وجلب البيانات
+window.onload = () => {
+    const fragment = new URLSearchParams(window.location.hash.slice(1));
+    let accessToken = fragment.get('access_token') || localStorage.getItem('discord_access_token');
+    if (accessToken) {
+        localStorage.setItem('discord_access_token', accessToken);
+       
+        // تبديل الواجهة
+        legalContent.classList.add('hidden');
+        dashboardContent.classList.remove('hidden');
+        notLoggedIn.classList.add('hidden');
+        loggedInView.classList.remove('hidden');
+        // جلب بيانات المستخدم
+        fetch('https://discord.com/api/users/@me', {
+            headers: { authorization: `Bearer ${accessToken}` }
+        })
+        .then(res => res.json())
+        .then(user => {
+            document.getElementById('user-name').innerText = `${user.username}#${user.discriminator}`;
+            document.getElementById('user-id').innerText = `ID: ${user.id}`;
+            document.querySelector('.user-avatar').src = `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png`;
+        })
+        .catch(() => {
+            localStorage.removeItem('discord_access_token');
+            location.reload();
+        });
+        // جلب السيرفرات
+        fetch('https://discord.com/api/users/@me/guilds', {
+            headers: { authorization: `Bearer ${accessToken}` }
+        })
+        .then(res => res.json())
+        .then(guilds => {
+            const list = document.getElementById('guilds-list');
+            list.innerHTML = '';
+            if (guilds.length === 0) {
+                list.innerHTML = '<li>لا توجد سيرفرات متاحة.</li>';
+                return;
+            }
+            guilds.forEach(g => {
+                const isAdmin = (BigInt(g.permissions) & BigInt(0x8)) === BigInt(0x8);
+                const isOwner = g.owner;
+                const isBotInGuild = false; // هنا يجب أن يتم التحقق الحقيقي لاحقًا
 
-// Initial language check
+                const li = document.createElement('li');
+                li.style.opacity = isBotInGuild ? '1' : '0.45';
+                li.style.cursor = isBotInGuild ? 'pointer' : 'not-allowed';
+                li.className = isBotInGuild ? '' : 'disabled';
+
+                li.innerHTML = `
+                    <i class="fa-solid fa-server" style="color: ${isBotInGuild ? '#3ba55c' : '#a0a8b8'};"></i>
+                    ${g.name}
+                    ${!isBotInGuild ? '<small style="color:#ed4245; margin-right:8px;">(البوت غير موجود في السيرفر)</small>' : ''}
+                    ${g.owner ? '<i class="fa-solid fa-crown" style="color:#ffd700; font-size:0.9em;"></i>' : ''}
+                `;
+
+                if (isBotInGuild) {
+                    li.title = "اضغط لإدارة السيرفر";
+                    li.addEventListener('click', () => {
+                        alert(`جاري فتح إعدادات سيرفر: ${g.name} (ID: ${g.id})`);
+                    });
+                } else {
+                    li.title = "البوت غير موجود في هذا السيرفر";
+                }
+
+                list.appendChild(li);
+            });
+        });
+        // تنظيف الرابط
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+};
 if (navigator.language.startsWith('en')) toggleLang();
 </script>
 </body>
